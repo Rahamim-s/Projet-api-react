@@ -3,13 +3,13 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [users, setUser] = useState([]);
+  const [stocks, setStock] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/getUsers');
-        setUser(response.data); // Assuming the response is an array
+        const response = await axios.get('http://localhost:3001/getstocks');
+        setStock(response.data); // Assuming the response is an array
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -23,16 +23,15 @@ function App() {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
+            <th>siren</th>
           </tr>
         </thead>
         <tbody>
           {
-          users.map(user => {
+          stocks.map(stock => {
             return (
-              <tr key={user.name}>
-              <td>{user.email}</td>
+              <tr>
+              <td>{stock.siren}</td>
             </tr>
             );
           }
