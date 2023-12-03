@@ -10,11 +10,14 @@ app.use(cors()); // use cors
 
 mongoose.connect('mongodb://127.0.0.1:27017/StockEtablissement')
 
-app.get('/getStocks',(req, res) => {
-    UserModel.find()
-    .then(stocks => res.json(stocks))
-    .catch(err => res.json(err))
-})
+app.get('/getStockBySiret/:siret', (req, res) => {
+    const { siret } = req.params;
+    UserModel.findOne({ siret: parseInt(siret) })
+        .then(stock => res.json(stock))
+        .catch(err => res.json(err));
+});
+
+
 app.listen(3001, () => {
     console.log('Server Is Running')
 }); // listen on port 3001
