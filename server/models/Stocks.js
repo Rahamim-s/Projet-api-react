@@ -1,4 +1,3 @@
-// Définition du modèle mongoose pour les stocks
 const mongoose = require ('mongoose')
 
 // Définir le schéma mongoose pour les stocks
@@ -21,7 +20,9 @@ const StockSchema = new mongoose.Schema({ // create mongoose schema
    activitePrincipaleEtablissement: String,
    nomenclatureActivitePrincipaleEtablissement: String,
    caractereEmployeurEtablissement: String,
+   libelleCommune2Etablissement: String,
  });
+
 
 // Créer le modèle mongoose basé sur le schéma
 const StockModel = mongoose.model("Stocks",StockSchema)

@@ -12,7 +12,8 @@ app.use(cors());
 
 mongoose.connect('mongodb://127.0.0.1:27017/StockEtablissement');
 
-const logsFilePath = path.join(__dirname, 'logs.txt');
+const logsFolderPath = 'C:/Projet_api/Projet-api-react/server/LogsStock';
+const logsFilePath = path.join(logsFolderPath, 'logs.txt');
 
 app.use((req, res, next) => {
     const logMessage = `[${new Date().toISOString()}] ${req.method} ${req.originalUrl}\n`;
@@ -53,7 +54,7 @@ app.delete('/deleteStock/:siret', async (req, res) => {
 });
 
 app.get('/downloadLogs', (req, res) => {
-    res.download(logsFilePath, '/logs.txt', (err) => {
+    res.download(logsFilePath, 'logs.txt', (err) => {
         if (err) {
             console.error('Error downloading logs:', err);
             res.status(500).json({ error: 'Internal Server Error' });
