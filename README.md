@@ -21,6 +21,7 @@
 ```bash
 # Install dependencies ($ cd ../server)
 npm install
+npm winston 
 #run back-en ($ cd ../server/src)
 npm  run start
 ```
