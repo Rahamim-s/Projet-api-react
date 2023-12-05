@@ -6,6 +6,7 @@
 * MongoDB
 * Express
 * axios
+* winston
 
 ## Versions
 **Dernière version stable :** 1.0
