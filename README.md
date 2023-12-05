@@ -6,6 +6,7 @@
 * MongoDB
 * Express
 * axios
+* winston
 
 ## Versions
 **Dernière version stable :** 1.0
@@ -21,6 +22,7 @@
 ```bash
 # Install dependencies ($ cd ../server)
 npm install
+npm winston 
 #run back-en ($ cd ../server/src)
 npm  run start
 ```
@@ -28,6 +30,7 @@ npm  run start
 ```bash
 # Install dependencies ($ cd../client)
 npm install
+npm install express mongoose cors nodemon
 #Serve on localhost:8080 ($ cd../client))
 npm run dev
 ```
