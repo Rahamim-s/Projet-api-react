@@ -29,6 +29,7 @@ npm  run start
 ```bash
 # Install dependencies ($ cd../client)
 npm install
+npm install express mongoose cors nodemon
 #Serve on localhost:8080 ($ cd../client))
 npm run dev
 ```
